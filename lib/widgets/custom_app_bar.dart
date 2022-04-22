@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:mamba/constants/colors.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class CustomAppBar extends StatelessWidget {
   final IconData leftIcon;
@@ -18,18 +20,24 @@ class CustomAppBar extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           GestureDetector(
-            onTap: leftCallBack != null ? () => leftCallBack!() : null,
+            // onTap: leftCallBack != null ? () => leftCallBack!() : null,
+            onTap: () => {
+              print(123),
+              Fluttertoast.showToast(msg: "Артка")
+              },
+            
             child: _buildIcon(leftIcon),
           ),
-          _buildIcon(rightIcon)
-          
+          _buildIcon(rightIcon),
         ],),
-    );
+        
+        
+    );    
   }
 
   Widget _buildIcon(IconData icon) {
     return Container(
-            padding: EdgeInsets.all(8),
+            padding: EdgeInsets.all(16),
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               color: Colors.white,
@@ -38,3 +46,4 @@ class CustomAppBar extends StatelessWidget {
           );
   }
 }
+
