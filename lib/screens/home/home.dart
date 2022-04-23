@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mamba/constants/colors.dart';
+import 'package:mamba/screens/home/widget/restaurant_info.dart';
 import 'package:mamba/widgets/custom_app_bar.dart';
 
 class HomePage extends StatefulWidget {
@@ -22,7 +23,8 @@ class _HomePageState extends State<HomePage> {
           CustomAppBar(
             Icons.arrow_back_ios_new_outlined,
             Icons.search_outlined
-          )
+          ),
+          RestaurantInfo()
       ],),
     );
   }
